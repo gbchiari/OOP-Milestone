@@ -33,7 +33,7 @@ namespace seneca {
 		(Any of the indentation or indentation size values exceed 4)
 		(The row value is greater than MaximumNumberOfMenuItems)
 		*/
-		if (!content || content[0] == '\0' || indentNumber > 4 || indentSize > 4 || (rowNumber >= 0 && rowNumber > MaximumNumberOfMenuItems)){
+		if (!content || content[0] == '\0' || indentNumber > 4 || indentSize > 4 || (rowNumber >= 0 && (unsigned int)rowNumber > MaximumNumberOfMenuItems)){
 			//Safe empty state
 			m_content = nullptr;
 			m_indentNumber = 0;
