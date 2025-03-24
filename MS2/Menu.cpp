@@ -99,7 +99,7 @@ namespace seneca {
 		}
 		else {
 			m_content = new char[strlen(content) +1]; //+1 for the '\0'
-			strcpy(m_content, content); //Copy m_content into content
+			ut.strcpy(m_content, content); //Copy m_content into content
 			m_indentNumber = indentNumber;
 			m_indentSize = indentSize;
 			m_rowNumber = rowNumber;
