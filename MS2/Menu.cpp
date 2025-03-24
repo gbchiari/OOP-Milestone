@@ -98,7 +98,7 @@ namespace seneca {
 			m_rowNumber = -1; //Not print if it is invalid
 		}
 		else {
-			m_content = new char[strlen(content) +1]; //+1 for the '\0'
+			m_content = new char[ut.strlen(content) +1]; //+1 for the '\0'
 			ut.strcpy(m_content, content); //Copy m_content into content
 			m_indentNumber = indentNumber;
 			m_indentSize = indentSize;
