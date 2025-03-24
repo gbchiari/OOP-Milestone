@@ -15,14 +15,15 @@ EXCEPT FOR:
 *
 The idea of using a helper pointer to traverse and skip leading spaces
 was referenced from OpenAI's ChatGPT (2024).
+AND
+The Utils.h and Utils.cpp because the Professor Fardad Soleimanloo gave the students.
 -----------------------------------------------------------
 */
 #define _CRT_SECURE_NO_WARNINGS
 #include "Menu.h"
 #include "Utils.h"
-#include <cstring>
 #include <iostream>
-#include <iomanip> //To setw(2) work properly
+#include <iomanip> //To setw() work good
 
 namespace seneca {
 
@@ -41,8 +42,8 @@ namespace seneca {
 			m_rowNumber = -1; //Not print if it is invalid
 		}
 		else {
-			m_content = new char[strlen(content) +1]; //+1 for the '\0'
-			strcpy(m_content, content); //Copy m_content into content
+			m_content = new char[ut.strlen(content) +1]; //+1 for the '\0'
+			ut.strcpy(m_content, content); //Copy m_content into content
 			m_indentNumber = indentNumber;
 			m_indentSize = indentSize;
 			m_rowNumber = rowNumber;
