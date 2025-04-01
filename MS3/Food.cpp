@@ -65,11 +65,11 @@ namespace seneca {
     }
     //Order method
     bool Food::order() {
-        std::cout << "     Food Size Selection\n"
-            "      1- Adult\n"
-            "      2- Child\n"
-            "      0- Back\n"
-            "     > ";
+        std::cout << "         Food Size Selection\n"
+            "          1- Adult\n"
+            "          2- Child\n"
+            "          0- Back\n"
+            "         > ";
         int sel = ut.getInt(0, 2);
         switch (sel) {
         case 1: m_child = false; m_ordered = true; break;
