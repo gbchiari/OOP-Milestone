@@ -26,6 +26,9 @@ namespace seneca {
     public:
         //Construction
         Drink();
+        //Rule of three
+        Drink(const Drink& src);
+        Drink& operator=(const Drink& src);
         //Public methofds
         std::ostream& print(std::ostream& os = std::cout) const;
         bool order();

@@ -25,6 +25,16 @@ namespace seneca {
     /////////////////////////////////MS3////////////////////////////////////////
     //Inheritance Drink class with Billable class
     Drink::Drink() : Billable() { m_size = '\0'; }
+    Drink::Drink(const Drink& src) : Billable(src) {
+        m_size = src.m_size;
+    }
+    Drink& Drink::operator=(const Drink& src) {
+        if (this != &src) {
+            Billable::operator=(src);
+            m_size = src.m_size;
+        }
+        return *this;
+    }
     std::ostream& Drink::print(std::ostream& os) const {
         if (!ordered()) {
             //Print ONLY the name if not ordered
