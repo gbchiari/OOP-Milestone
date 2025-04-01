@@ -28,7 +28,7 @@ namespace seneca {
     std::ostream& Drink::print(std::ostream& os) const {
         os << std::left << std::setw(28) << std::setfill('.') << (m_name ? m_name : "")
             << std::right << std::setfill(' ');
-        if (!ordered()) os << ".....";
+        if (!ordered()) os << "     ";
         else if (m_size == 'S') os << "SML..";
         else if (m_size == 'M') os << "MID..";
         else if (m_size == 'L') os << "LRG..";
