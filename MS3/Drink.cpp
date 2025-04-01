@@ -27,8 +27,15 @@ namespace seneca {
     Drink::Drink() : Billable() { m_size = '\0'; }
     std::ostream& Drink::print(std::ostream& os) const {
         if (!ordered()) {
-            //Print only the name if not ordered
-            os << (m_name ? m_name : "");
+            if (m_price == 0 || m_size == '\0') {
+                os << (m_name ? m_name : "");
+            }
+            else {
+                os << std::left << std::setw(28) << std::setfill('.') << (m_name ? m_name : "")
+                    << std::right << std::setfill(' ')
+                    << "....."
+                    << std::setw(7) << std::fixed << std::setprecision(2) << m_price;
+            }
         }
         else {
             os << std::left << std::setw(28) << std::setfill('.') << (m_name ? m_name : "")
