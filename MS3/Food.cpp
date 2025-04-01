@@ -46,27 +46,30 @@ namespace seneca {
     }
     //Pritn method
     std::ostream& Food::print(std::ostream& os) const {
-        os << std::left << std::setw(28) << std::setfill('.') << (m_name ? m_name : "")
-            << std::right << std::setfill(' ');
-
-        if (!m_ordered) os << ".....";
-        else os << (m_child ? "Child" : "Adult");
-
-        os << std::setw(7) << std::fixed << std::setprecision(2) << price();
-
-        if (m_customize && &os == &std::cout) {
-            os << " >> ";
-            for (int i = 0; i < 30 && m_customize[i]; ++i) os << m_customize[i];
+        if (!m_ordered) {
+            //Print only the name if not ordered
+            os << (m_name ? m_name : "");
+        }
+        else {
+            os << std::left << std::setw(28) << std::setfill('.') << (m_name ? m_name : "")
+                << std::right << std::setfill(' ');
+            os << (m_child ? "Child" : "Adult");
+            os << std::setw(7) << std::fixed << std::setprecision(2) << price();
+            if (m_customize && &os == &std::cout) {
+                os << " >> ";
+                for (int i = 0; i < 30 && m_customize[i]; ++i)
+                    os << m_customize[i];
+            }
         }
         return os;
     }
     //Order method
     bool Food::order() {
-        std::cout << "     Food Size Selection\n"
-            "      1- Adult\n"
-            "      2- Child\n"
-            "      0- Back\n"
-            "     > ";
+        std::cout << "         Food Size Selection\n"
+            "          1- Adult\n"
+            "          2- Child\n"
+            "          0- Back\n"
+            "         > ";
         int sel = ut.getInt(0, 2);
         switch (sel) {
         case 1: m_child = false; m_ordered = true; break;

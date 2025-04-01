@@ -1,0 +1,120 @@
+Script started on Tue 01 Apr 2025 04:17:22 PM EDT
+==156053== Memcheck, a memory error detector
+==156053== Copyright (C) 2002-2022, and GNU GPL'd, by Julian Seward et al.
+==156053== Using Valgrind-3.21.0 and LibVEX; rerun with -h for copyright info
+==156053== Command: ms.exe
+==156053== 
+Testing Drink Class=============================
+Drink Tester!
+Pepsi.......................        4.50
+Orange Juice................        3.50
+Pepsi.......................        4.50
+Orange Juice................        3.50
+Enter the folowing:
+1<ENTER>
+2<ENTER>
+3<ENTER>
+4<ENTER>
+0<ENTER>
+=========>
+     Drink Size Selection
+      1- Small
+      2- Medium
+      3- Large
+      4- Extra Large
+      0- Back
+     > ^C==156053== 
+==156053== Process terminating with default action of signal 2 (SIGINT)
+==156053==    at 0x5812B40: __read_nocancel (in /usr/lib64/libc-2.17.so)
+==156053==    by 0x579ED53: _IO_file_underflow@@GLIBC_2.2.5 (in /usr/lib64/libc-2.17.so)
+==156053==    by 0x579FF21: _IO_default_uflow (in /usr/lib64/libc-2.17.so)
+==156053==    by 0x579A78D: getc (in /usr/lib64/libc-2.17.so)
+==156053==    by 0x4F3888C: syncgetc (stdio_sync_filebuf.h:225)
+==156053==    by 0x4F3888C: __gnu_cxx::stdio_sync_filebuf<char, std::char_traits<char> >::underflow() (stdio_sync_filebuf.h:133)
+==156053==    by 0x4F47135: sgetc (streambuf:351)
+==156053==    by 0x4F47135: sgetc (streambuf:345)
+==156053==    by 0x4F47135: std::istream::peek() (istream.tcc:638)
+==156053==    by 0x402BED: seneca::Utils::getInt() (Utils.cpp:76)
+==156053==    by 0x402CFB: seneca::Utils::getInt(unsigned int, unsigned int) (Utils.cpp:104)
+==156053==    by 0x403532: seneca::Drink::order() (Drink.cpp:49)
+==156053==    by 0x401948: DrinkTester() (ms3_tester_prof.cpp:82)
+==156053==    by 0x401381: main (ms3_tester_prof.cpp:27)
+==156053== 
+==156053== HEAP SUMMARY:
+==156053==     in use at exit: 90,243 bytes in 7 blocks
+==156053==   total heap usage: 9 allocs, 2 frees, 90,262 bytes allocated
+==156053== 
+==156053== 6 bytes in 1 blocks are still reachable in loss record 1 of 7
+==156053==    at 0x4C2CA43: operator new[](unsigned long) (vg_replace_malloc.c:714)
+==156053==    by 0x402A66: seneca::Utils::alocpy(char*&, char const*) const (Utils.cpp:39)
+==156053==    by 0x40315D: seneca::Billable::name(char const*) (Billable.cpp:45)
+==156053==    by 0x4036A3: seneca::Drink::read(std::basic_ifstream<char, std::char_traits<char> >&) (Drink.cpp:69)
+==156053==    by 0x4017E2: DrinkTester() (ms3_tester_prof.cpp:72)
+==156053==    by 0x401381: main (ms3_tester_prof.cpp:27)
+==156053== 
+==156053== 13 bytes in 1 blocks are still reachable in loss record 2 of 7
+==156053==    at 0x4C2CA43: operator new[](unsigned long) (vg_replace_malloc.c:714)
+==156053==    by 0x402A66: seneca::Utils::alocpy(char*&, char const*) const (Utils.cpp:39)
+==156053==    by 0x40315D: seneca::Billable::name(char const*) (Billable.cpp:45)
+==156053==    by 0x4036A3: seneca::Drink::read(std::basic_ifstream<char, std::char_traits<char> >&) (Drink.cpp:69)
+==156053==    by 0x4017FB: DrinkTester() (ms3_tester_prof.cpp:73)
+==156053==    by 0x401381: main (ms3_tester_prof.cpp:27)
+==156053== 
+==156053== 568 bytes in 1 blocks are still reachable in loss record 3 of 7
+==156053==    at 0x4C2B15C: malloc (vg_replace_malloc.c:431)
+==156053==    by 0x5791C4C: __fopen_internal (in /usr/lib64/libc-2.17.so)
+==156053==    by 0x4F0097F: std::__basic_file<char>::open(char const*, std::_Ios_Openmode, int) (basic_file.cc:240)
+==156053==    by 0x4F3EEEA: std::basic_filebuf<char, std::char_traits<char> >::open(char const*, std::_Ios_Openmode) (fstream.tcc:185)
+==156053==    by 0x4F3F80B: open (fstream:660)
+==156053==    by 0x4F3F80B: std::basic_ifstream<char, std::char_traits<char> >::basic_ifstream(char const*, std::_Ios_Openmode) (fstream:533)
+==156053==    by 0x401775: DrinkTester() (ms3_tester_prof.cpp:68)
+==156053==    by 0x401381: main (ms3_tester_prof.cpp:27)
+==156053== 
+==156053== 568 bytes in 1 blocks are still reachable in loss record 4 of 7
+==156053==    at 0x4C2B15C: malloc (vg_replace_malloc.c:431)
+==156053==    by 0x5791C4C: __fopen_internal (in /usr/lib64/libc-2.17.so)
+==156053==    by 0x4F0097F: std::__basic_file<char>::open(char const*, std::_Ios_Openmode, int) (basic_file.cc:240)
+==156053==    by 0x4F3EEEA: std::basic_filebuf<char, std::char_traits<char> >::open(char const*, std::_Ios_Openmode) (fstream.tcc:185)
+==156053==    by 0x4F3FCA3: open (fstream:923)
+==156053==    by 0x4F3FCA3: std::basic_ofstream<char, std::char_traits<char> >::basic_ofstream(char const*, std::_Ios_Openmode) (fstream:795)
+==156053==    by 0x40179A: DrinkTester() (ms3_tester_prof.cpp:69)
+==156053==    by 0x401381: main (ms3_tester_prof.cpp:27)
+==156053== 
+==156053== 8,192 bytes in 1 blocks are still reachable in loss record 5 of 7
+==156053==    at 0x4C2CA43: operator new[](unsigned long) (vg_replace_malloc.c:714)
+==156053==    by 0x4F3AFD3: _M_allocate_internal_buffer (fstream.tcc:56)
+==156053==    by 0x4F3AFD3: std::basic_filebuf<char, std::char_traits<char> >::_M_allocate_internal_buffer() (fstream.tcc:49)
+==156053==    by 0x4F3EF02: std::basic_filebuf<char, std::char_traits<char> >::open(char const*, std::_Ios_Openmode) (fstream.tcc:188)
+==156053==    by 0x4F3F80B: open (fstream:660)
+==156053==    by 0x4F3F80B: std::basic_ifstream<char, std::char_traits<char> >::basic_ifstream(char const*, std::_Ios_Openmode) (fstream:533)
+==156053==    by 0x401775: DrinkTester() (ms3_tester_prof.cpp:68)
+==156053==    by 0x401381: main (ms3_tester_prof.cpp:27)
+==156053== 
+==156053== 8,192 bytes in 1 blocks are still reachable in loss record 6 of 7
+==156053==    at 0x4C2CA43: operator new[](unsigned long) (vg_replace_malloc.c:714)
+==156053==    by 0x4F3AFD3: _M_allocate_internal_buffer (fstream.tcc:56)
+==156053==    by 0x4F3AFD3: std::basic_filebuf<char, std::char_traits<char> >::_M_allocate_internal_buffer() (fstream.tcc:49)
+==156053==    by 0x4F3EF02: std::basic_filebuf<char, std::char_traits<char> >::open(char const*, std::_Ios_Openmode) (fstream.tcc:188)
+==156053==    by 0x4F3FCA3: open (fstream:923)
+==156053==    by 0x4F3FCA3: std::basic_ofstream<char, std::char_traits<char> >::basic_ofstream(char const*, std::_Ios_Openmode) (fstream:795)
+==156053==    by 0x40179A: DrinkTester() (ms3_tester_prof.cpp:69)
+==156053==    by 0x401381: main (ms3_tester_prof.cpp:27)
+==156053== 
+==156053== 72,704 bytes in 1 blocks are still reachable in loss record 7 of 7
+==156053==    at 0x4C2B15C: malloc (vg_replace_malloc.c:431)
+==156053==    by 0x4EDD3E5: pool (eh_alloc.cc:123)
+==156053==    by 0x4EDD3E5: __static_initialization_and_destruction_0 (eh_alloc.cc:262)
+==156053==    by 0x4EDD3E5: _GLOBAL__sub_I_eh_alloc.cc (eh_alloc.cc:338)
+==156053==    by 0x400F9C2: _dl_init (in /usr/lib64/ld-2.17.so)
+==156053==    by 0x4001179: ??? (in /usr/lib64/ld-2.17.so)
+==156053== 
+==156053== LEAK SUMMARY:
+==156053==    definitely lost: 0 bytes in 0 blocks
+==156053==    indirectly lost: 0 bytes in 0 blocks
+==156053==      possibly lost: 0 bytes in 0 blocks
+==156053==    still reachable: 90,243 bytes in 7 blocks
+==156053==         suppressed: 0 bytes in 0 blocks
+==156053== 
+==156053== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 0 from 0)
+
+Script done on Tue 01 Apr 2025 04:17:32 PM EDT
