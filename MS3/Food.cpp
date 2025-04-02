@@ -51,7 +51,7 @@ namespace seneca {
         }
         else if (!m_ordered) {
             //If not ordered =
-            os << std::left << std::setw(28) << std::setfill('.') << m_name
+            os << std::left << std::setw(33) << std::setfill('.') << m_name
                 << std::right << std::setfill(' ')
                 << std::setw(7) << std::fixed << std::setprecision(2) << m_price;
         }
