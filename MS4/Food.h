@@ -16,7 +16,7 @@
 // *
 // The read function who I looked up in the teacher's notes from the class, I didn't copy everything, just the structure.
 // -----------------------------------------------------------
-//***********************************************************************/
+***********************************************************************/
 
 #ifndef SENECA_FOOD_H
 #define SENECA_FOOD_H

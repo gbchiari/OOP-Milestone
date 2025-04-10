@@ -16,7 +16,7 @@
 // *
 // The read function who I looked up in the teacher's notes from the class, I didn't copy everything, just the structure.
 // -----------------------------------------------------------
-//***********************************************************************/
+***********************************************************************/
 
 #ifndef SENECA_BILLABLE_H
 #define SENECA_BILLABLE_H

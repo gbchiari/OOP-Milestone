@@ -18,7 +18,7 @@
 // ---
 // The charsplit function who I asked from OpenAI's ChatGPT (2024) to help me build the function.
 // -----------------------------------------------------------
-//***********************************************************************/
+***********************************************************************/
 
 #ifndef SENECA_UTILS_H
 #define SENECA_UTILS_H
