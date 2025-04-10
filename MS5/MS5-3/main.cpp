@@ -38,31 +38,31 @@ int main() {
     while (!done) {
         size_t selection = mainMenu.select();
         switch (selection) {
-        case 1: { // Order
+        case 1: { //Order
             bool orderingDone = false;
             while (!orderingDone) {
                 size_t orderSelection = orderMenu.select();
                 switch (orderSelection) {
-                case 1: // Food
+                case 1: //Food
                     ordering.orderFood();
                     break;
-                case 2: // Drink
+                case 2: //Drink
                     ordering.orderDrink();
                     break;
-                case 0: // Back to main menu
+                case 0: //Back to main menu
                     orderingDone = true;
                     break;
                 }
             }
             break;
         }
-        case 4: // List Foods
+        case 4: //List Foods
             ordering.listFoods();
             break;
-        case 5: // List Drinks
+        case 5: //List Drinks
             ordering.listDrinks();
             break;
-        case 0: { // End Program
+        case 0: { //End Program
             if (ordering.hasUnsavedBill()) {
                 Menu confirmExit("You have bills that are not saved. Are you sure you want to exit?", "No");
                 confirmExit << "Yes";
