@@ -28,7 +28,7 @@ int main() {
         return 1;
     }
 
-    Menu mainMenu("Seneca Restaurant \n", "End Program");
+    Menu mainMenu("Seneca Restaurant ", "End Program");
     mainMenu << "Order" << "Print Bill" << "Start a New Bill" << "List Foods" << "List Drinks";
 
     bool done = false;
