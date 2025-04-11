@@ -102,7 +102,7 @@ namespace seneca {
         do {
             value = getInt();
             if (value < min || value > max) { //Check tghe min e max values
-                std::cout << "Invalid value [" << min << " <= value <= " << max << "], try again: ";
+                std::cout << "Invalid value: [" << min << " <= value <= " << max << "], try again: ";
             }
         } while (value < min || value > max);
         return value;
